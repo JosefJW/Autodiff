@@ -1,4 +1,4 @@
-from .dual import Dual
+from .dual.dual import Dual
 import unittest
 import math
 

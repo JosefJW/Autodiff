@@ -1,5 +1,5 @@
 import unittest
-from .dual import Dual
+from .dual.dual import Dual
 import math
 from math import isclose
 
