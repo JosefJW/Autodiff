@@ -71,7 +71,7 @@ print("f'(x) =", f.dual)
 
 ## Examples
 
-For more complex examples, refer to the examples/ directory in the repository (not yet released).
+For more complex examples, refer to the examples/ directory in the repository.
 
 ## Contributing
 

@@ -189,7 +189,13 @@ class Dual(Number):
         return self
     
     def __abs__(self):
-        return math.sqrt(self.real**2 + self.dual**2)
+        if self.real < 0:
+            if self.dual < 0:
+                return Dual(-self.real, -self.dual)
+            return Dual(-self.real, self.dual)
+        if self.dual < 0:
+            return Dual(self.real, -self.dual)
+        return Dual(self.real, self.dual)
     
     def __float__(self):
         return float(self.real)
