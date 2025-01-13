@@ -1,6 +1,8 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from dual import Dual
 import math
-import sympy as sp
 
 def nested_trig(x=math.pi):
     dx = Dual(x, 1)
