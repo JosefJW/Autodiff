@@ -4,6 +4,88 @@ import numpy as np
 import sys
 
 class Dual(Number):
+    """
+    A class representing dual numbers, which are a type of hypercomplex number.
+    Dual numbers are composed of a real part and a dual part, where the dual part is
+    often used in automatic differentiation to represent derivatives or infinitesimal values.
+
+    Attributes:
+        real (float): The real component of the dual number.
+        dual (float): The dual component of the dual number.
+
+    Methods:
+        __add__(self, other): Adds two dual numbers or a dual number and a scalar.
+        __radd__(self, other): Right-hand addition of a dual number and a scalar.
+        __iadd__(self, other): In-place addition of a dual number and another dual number or scalar.
+        __sub__(self, other): Subtracts two dual numbers or a dual number and a scalar.
+        __rsub__(self, other): Right-hand subtraction of a dual number and a scalar.
+        __isub__(self, other): In-place subtraction of a dual number and another dual number or scalar.
+        __mul__(self, other): Multiplies two dual numbers or a dual number and a scalar.
+        __rmul__(self, other): Right-hand multiplication of a dual number and a scalar.
+        __imul__(self, other): In-place multiplication of a dual number and another dual number or scalar.
+        __truediv__(self, other): Divides two dual numbers or a dual number and a scalar.
+        __rtruediv__(self, other): Right-hand division of a dual number and a scalar.
+        __itruediv__(self, other): In-place division of a dual number and another dual number or scalar.
+        __pow__(self, exponent): Raises a dual number to a scalar or dual number exponent.
+        __rpow__(self, other): Right-hand power of a dual number and a scalar.
+        __ipow__(self, other): In-place exponentiation of a dual number by a scalar or dual number.
+        __eq__(self, other): Compares if two dual numbers are equal.
+        __ne__(self, other): Compares if two dual numbers are not equal.
+        __neg__(self): Negates a dual number.
+        __pos__(self): Returns the dual number itself.
+        __abs__(self): Returns the absolute value (magnitude) of the dual number.
+        __float__(self): Returns the real component as a float.
+        __int__(self): Returns the real component as an integer.
+        __repr__(self): Returns the official string representation of the dual number.
+        __str__(self): Returns a user-friendly string representation of the dual number.
+        __index__(self): Returns the integer representation of the real component.
+        __hash__(self): Returns the hash value of the dual number.
+        __round__(self, ndigits): Rounds the dual number to a specified number of decimal places.
+        __floor__(self): Returns the largest integer less than or equal to the real component.
+        __ceil__(self): Returns the smallest integer greater than or equal to the real component.
+        __trunc__(self): Returns the truncated integer value of the real component.
+        __getitem__(self, index): Allows access to the real or dual component using index (0 for real, 1 for dual).
+        __setitem__(self, index, value): Sets the value of the real or dual component using index (0 for real, 1 for dual).
+        __delitem__(self, index): Deletes the real or dual component.
+        __iter__(self): Returns an iterator over the real and dual components.
+        __reversed__(self): Returns the real and dual components in reversed order.
+        __array__(self, dtype=None): Converts the dual number to a NumPy array.
+        __sizeof__(self): Returns the memory size of the dual number.
+        __bool__(self): Returns whether the dual number is non-zero.
+        __copy__(self): Creates a shallow copy of the dual number.
+        __deepcopy__(self, memo): Creates a deep copy of the dual number.
+        __dir__(self): Returns the list of attributes and methods available for the dual number.
+        __to_dict__(self): Converts the dual number to a dictionary with 'real' and 'dual' keys.
+        __to_tuple__(self): Converts the dual number to a tuple of (real, dual).
+        __len__(self): Returns the length (number of components) of the dual number, which is 2.
+        real(self): Returns the real component of the dual number.
+        dual(self): Returns the dual component of the dual number.
+        conjugate(self): Returns the conjugate of the dual number.
+        is_zero(self): Checks if the dual number is zero.
+        is_real(self): Checks if the dual number is purely real (dual component is zero).
+        to_latex(self): Converts the dual number to a LaTeX string representation.
+        log(self): Computes the natural logarithm of the dual number.
+        log10(self): Computes the base-10 logarithm of the dual number.
+        logbase(self, base): Computes the logarithm of the dual number to a given base.
+        exp(self): Computes the exponential of the dual number.
+        exp2(self): Computes the base-2 exponential of the dual number.
+        sqrt(self): Computes the square root of the dual number.
+        cbrt(self): Computes the cube root of the dual number.
+        sin(self): Computes the sine of the dual number.
+        cos(self): Computes the cosine of the dual number.
+        tan(self): Computes the tangent of the dual number.
+        sinh(self): Computes the hyperbolic sine of the dual number.
+        cosh(self): Computes the hyperbolic cosine of the dual number.
+        tanh(self): Computes the hyperbolic tangent of the dual number.
+        asin(self): Computes the inverse sine (arcsine) of the dual number.
+        acos(self): Computes the inverse cosine (arccosine) of the dual number.
+        atan(self): Computes the inverse tangent (arctangent) of the dual number.
+        asinh(self): Computes the inverse hyperbolic sine of the dual number.
+        acosh(self): Computes the inverse hyperbolic cosine of the dual number.
+        atanh(self): Computes the inverse hyperbolic tangent of the dual number.
+    """
+    
+    
     ln10 = math.log(10)
     ln2 = math.log(2)
     
